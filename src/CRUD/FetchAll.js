@@ -23,7 +23,7 @@ export default function FetchAll() {
     try {
       const result = await axios.get(
         // "http://localhost:8080/fetchAllCustomer");
-      "https://springprojectinsurance-production-87a1.up.railway.app/fetchAllCustomer");
+        "https://springprojectinsurance-production-87a1.up.railway.app/fetchAllCustomer");
       setCustomers(result.data.listCustomer);
       console.log(result.data);
     } catch (error) {
@@ -151,9 +151,9 @@ export default function FetchAll() {
               </tr>
             </thead>
             <tbody>
-              {
+              {customers ?(
                 customers.map((customer, index) => (
-                // currentCustomers.map((customer, index) => (//cmd
+                  // currentCustomers.map((customer, index) => (//cmd
                   <tr>
                     <th scope="row" key={index}>
                       {customer.customerId}
@@ -171,8 +171,8 @@ export default function FetchAll() {
                     <td>
                       <Link
                         className=" btn1 btn-outline-primary mx-2"
-                      // to={`/updat/${customer.customerId}`}
-                      to={`/up/${customer.customerId}`}
+                        // to={`/updat/${customer.customerId}`}
+                        to={`/up/${customer.customerId}`}
                       ><i className="fa fa-upload"></i>
 
                       </Link>
@@ -195,7 +195,7 @@ export default function FetchAll() {
                       </span> */}
                     </td>
                   </tr>
-                ))
+                ))):(" no data available ")
               }
             </tbody>
           </table>
