@@ -21,7 +21,9 @@ export default function FetchAll() {
   // };cmd
   const loadCustomers = async () => {
     try {
-      const result = await axios.get("http://localhost:8080/fetchAllCustomer");
+      const result = await axios.get(
+        // "http://localhost:8080/fetchAllCustomer");
+      "https://springprojectinsurance-production-87a1.up.railway.app/fetchAllCustomer");
       setCustomers(result.data.listCustomer);
       console.log(result.data);
     } catch (error) {
