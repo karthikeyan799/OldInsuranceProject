@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"; 
 export default function Ho(props) {
-const API_RAILWAY="https://springprojectinsurance-production-87a1.up.railway.app/";
   const [fetch, setfetch] = useState({
     userName: "",
     eMail:'',
