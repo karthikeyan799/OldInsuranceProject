@@ -18,7 +18,7 @@ export default function Find() {
   const loadCustomers = async () => {
     try {
       const result = await axios.get("http://localhost:8080/fetchAllCustomer");
-      setCustomers(result.data.listCustomer);
+      // setCustomers(result.data.listCustomer);cmd
       setFilteredCustomers(result.data.listCustomer);
       console.log(result.data);
       console.log("by name");
