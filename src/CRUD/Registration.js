@@ -20,7 +20,8 @@ export default function Registration(props) {
     event.preventDefault();
     try {
       await axios.post(
-        "http://localhost:8080/save",
+        // "http://localhost:8080/save",
+       "https://springprojectinsurance-production-87a1.up.railway.app/save",
         register
         // employeename: employeename,
         //  email: email,
