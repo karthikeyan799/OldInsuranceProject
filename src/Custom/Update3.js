@@ -134,14 +134,14 @@ export default function Update3() {
         alert("CustomerId is NOt Found ");
         // errors.customerId = "invalidid";
         // setCustomer(rec)
-        setValid(false)
+        // setValid(false)cmd
       } else {
         // setFetch(rec);
         setCustomer(rec);
         // alert("successfull karthi");
         console.log(rec);
         setErrors("");
-        setValid(true);
+        // setValid(true);cmd
       }
     } catch (error) {
       console.error("Error fetching customers:", error);

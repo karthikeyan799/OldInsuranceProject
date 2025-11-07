@@ -539,9 +539,9 @@ export default function Add2() {
     //   errors.customerName="Name is maximum 14 letters."
     // }
    
-const isDuplicateEmail=existing.some((entry)=>entry.eMail===customers.eMail);
+// const isDuplicateEmail=existing.some((entry)=>entry.eMail===customers.eMail);cmd
 
-const isDuplicatePhone=existing.some((entry)=>entry.phoneNumber===customers.phoneNumber);
+// const isDuplicatePhone=existing.some((entry)=>entry.phoneNumber===customers.phoneNumber);cmd
 if(isDuplicateEmail||isDuplicatePhone){
   errors.phoneNumber="this number is already used";
   errors.eMail="this Email is already used";  
