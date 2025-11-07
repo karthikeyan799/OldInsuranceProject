@@ -35,7 +35,7 @@ import AddPolicy from "../Policy/AddPolicy";
 export default function HomeHeader(props) {
   const [loggedIn, setLoggedIn] = useState(false);//false
   // const [loggedOut, setLoggedOut] = useState(false);cmd
-  const [display, setDisplay] = useState(true);
+  // const [display, setDisplay] = useState(true);cmd
   // const navigate = useNavigate();
   // const [redirect,setRedirect]=useState(false);
   // const demo = true;cmd
@@ -69,18 +69,18 @@ export default function HomeHeader(props) {
     alert('you clicked "no');
     setConfirmation(false);
   };
-  const renderConfirmationDialog = () => {
-    if (showConfirmation) {
-      return (
-        <div>
-          <p>Are you sure you want to continue?</p>
-          <button onClick={handleYesClick}>Yes</button>
-          <button onClick={handleNoClick}>No</button>
-        </div>
-      );
-    }
-    return null;
-  };
+  // const renderConfirmationDialog = () => {
+  //   if (showConfirmation) {
+  //     return (
+  //       <div>
+  //         <p>Are you sure you want to continue?</p>
+  //         <button onClick={handleYesClick}>Yes</button>
+  //         <button onClick={handleNoClick}>No</button>
+  //       </div>
+  //     );
+  //   }
+  //   return null;
+  // };cmd
   return (
     <Container fluid style={{ height: "100vh" }}>
       <Row style={{ backgroundColor: "blueviolet", height: "96vh" }}>

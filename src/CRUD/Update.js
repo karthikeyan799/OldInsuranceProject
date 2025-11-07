@@ -33,13 +33,13 @@ export default function Update() {
   const onInputChange = (e) => {
     setCustomer({ ...customers, [e.target.name]: e.target.value });
   };
-   useEffect(() => {
-    console.log(errors);
-    if (Object.keys(errors).length === 0 && isSubmit) {
-      console.log(errors);
-    };
-    loadCustomer();
-  }, []);
+  //  useEffect(() => {
+  //   console.log(errors);
+  //   if (Object.keys(errors).length === 0 && isSubmit) {
+  //     console.log(errors);
+  //   };
+  //   loadCustomer();
+  // }, []);
 
   const onSubmit = async (e) => {
     e.preventDefault();

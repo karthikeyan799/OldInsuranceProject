@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 export default function Find() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [customers, setCustomers] = useState([]);
+  // const [customers, setCustomers] = useState([]);cmd
   const [filteredCustomers, setFilteredCustomers] = useState([]);
   const [error, setError] = useState("");
   useEffect(() => {

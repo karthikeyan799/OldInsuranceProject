@@ -1,8 +1,8 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { useNavigate } from "react-router-dom";
 export default function Update3() {
-  let navigate = useNavigate();
+  // let navigate = useNavigate();cmd
   // const { customerId } = useParams();
   const [errors, setErrors] = useState({});
 // const [fetch,setFetch]=useState({
@@ -113,40 +113,40 @@ export default function Update3() {
     
     return errors;
   }
-  const loadCustomer = async () => {
-    const validationErrors = validateForm(customers);
-    if (Object.keys(validationErrors).length===0) {
+  // const loadCustomer = async () => {
+  //   const validationErrors = validateForm(customers);
+  //   if (Object.keys(validationErrors).length===0) {
     
-      console.log("Form data is valid:", customers);
-    } else {
-      setErrors(validationErrors);
-    }
-    try {
-      const record = await axios.get(
-        `http://localhost:8080/fetchCustomerId?customerId=${customers.customerId}`
-      );
-      // alert("updated successfull");
-      // setCustomer(record.data.customer);
-      // console.log(record.data);
-      const rec = record.data.customer;
+  //     console.log("Form data is valid:", customers);
+  //   } else {
+  //     setErrors(validationErrors);
+  //   }
+  //   try {
+  //     const record = await axios.get(
+  //       `http://localhost:8080/fetchCustomerId?customerId=${customers.customerId}`
+  //     );
+  //     // alert("updated successfull");
+  //     // setCustomer(record.data.customer);
+  //     // console.log(record.data);
+  //     const rec = record.data.customer;
 
-      if (rec === null) {
-        alert("CustomerId is NOt Found ");
-        // errors.customerId = "invalidid";
-        // setCustomer(rec)
-        // setValid(false)cmd
-      } else {
-        // setFetch(rec);
-        setCustomer(rec);
-        // alert("successfull karthi");
-        console.log(rec);
-        setErrors("");
-        // setValid(true);cmd
-      }
-    } catch (error) {
-      console.error("Error fetching customers:", error);
-    }
-  };
+  //     if (rec === null) {
+  //       alert("CustomerId is NOt Found ");
+  //       // errors.customerId = "invalidid";
+  //       // setCustomer(rec)
+  //       // setValid(false)cmd
+  //     } else {
+  //       // setFetch(rec);
+  //       setCustomer(rec);
+  //       // alert("successfull karthi");
+  //       console.log(rec);
+  //       setErrors("");
+  //       // setValid(true);cmd
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching customers:", error);
+  //   }
+  // };cmd
   // const [valid, setValid] = useState(false);cmd
   return (
     <div className="container" style={{ borderTopLeftRadius: "50px" }}>
