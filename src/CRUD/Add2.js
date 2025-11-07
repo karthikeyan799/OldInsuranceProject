@@ -53,7 +53,8 @@ export default function Add2() {
       const result=await 
       axios
         .post(
-          "http://localhost:8080/addCustomer",
+          // "http://localhost:8080/addCustomer",
+            "https://springprojectinsurance-production-87a1.up.railway.app/addCustomer",
           customers
           // formValues
         )

@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"; 
 export default function Ho(props) {
-
+const API_RAILWAY="https://springprojectinsurance-production-87a1.up.railway.app/";
   const [fetch, setfetch] = useState({
     userName: "",
     eMail:'',
@@ -56,7 +56,8 @@ export default function Ho(props) {
     const { userName, password } = fetch;
     try {
       await axios
-        .post("http://localhost:8080/loginUser", { userName, password })
+        // .post("http://localhost:8080/loginUser", { userName, password })
+        .post("https://springprojectinsurance-production-87a1.up.railway.app/loginUser", { userName, password })
         .then((res) => {
           console.log(res.data.message);
           // const user = res.data.message === "Email not exits";cmd

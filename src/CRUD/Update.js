@@ -56,7 +56,8 @@ export default function Update() {
     // if(validateForm()) {
     try {
       const result = await axios.post(
-        `http://localhost:8080/updateCustomer?customerId=${customers.customerId}`,
+        // `http://localhost:8080/updateCustomer?customerId=${customers.customerId}`,
+          `https://springprojectinsurance-production-87a1.up.railway.app/updateCustomer?customerId=${customers.customerId}`,
         customers
       );
       const datas = result.data.customer;
@@ -128,7 +129,9 @@ export default function Update() {
     try {
       const record = await axios.get(
         // `http://localhost:8080/fetchCustomerId?customerId=${customers.customerId}`
-             `http://localhost:8080/fetchCustomerId?customerId=${customerId}`
+            //  `http://localhost:8080/fetchCustomerId?customerId=${customerId}`
+              `https://springprojectinsurance-production-87a1.up.railway.app/fetchCustomerId?customerId=${customerId}`
+
       );
       // alert("updated successfull");
       // setCustomer(record.data.customer);
