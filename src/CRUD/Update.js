@@ -1,13 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 export default function Update() {
   // let navigate = useNavigate();
   const { customerId } = useParams();
   const [errors, setErrors] = useState({});
-  const [fetch, setFetch] = useState({
-    customerId: "",
-  });
+  // const [fetch, setFetch] = useState({
+  //   customerId: "",
+  // });cmd
   
   const [isSubmit, setIsSubmit] = useState(false);
   const [customers, setCustomer] = useState({
@@ -25,11 +25,11 @@ export default function Update() {
     phoneNumberError: "",
   });
 
-  const onIdChange = (e) => {
-    setFetch({ customerId: e.target.value });
-    // record:true;
-    // setRecord(true);
-  };
+  // const onIdChange = (e) => {
+  //   setFetch({ customerId: e.target.value });
+  //   // record:true;
+  //   // setRecord(true);
+  // };cmd
   const onInputChange = (e) => {
     setCustomer({ ...customers, [e.target.name]: e.target.value });
   };
@@ -152,7 +152,7 @@ export default function Update() {
       console.error("Error fetching customers:", error);
     }
   };
-  const [valid, setValid] = useState(false);
+  // const [valid, setValid] = useState(false);cmd
   return (
     <div className="container" style={{ borderTopLeftRadius: "50px" }}>
       {/* <div className="table"> */}

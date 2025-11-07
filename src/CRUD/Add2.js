@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Col, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+// import { Col, Row } from "react-bootstrap";cmd
+// import { useNavigate } from "react-router-dom";cmd
 
 export default function Add2() { 
   const [customers, setCustomers] = useState({
@@ -19,7 +19,7 @@ export default function Add2() {
   });
   const [errors, setErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  const [existing,setExisting]=useState([]);
+  // const [existing,setExisting]=useState([]);cmd
   const handleChange = (e) => {
     // console.log(e.target);
     // const{name , value} = e.target;
@@ -473,7 +473,7 @@ export default function Add2() {
     // if (!customers.customerId.trim()) {
     //   errors.customerId = "Id is required";
     // }
-    let isValid=true;
+    // let isValid=true;cmd
     // if (name.trim()==='') {
     // 	document.getElementById('sname').style.color='red';
     // 	document.getElementById('sname').innerText='name is required';

@@ -27,14 +27,14 @@ export default function Find() {
     }
   };
 
-  const handleSearchClick = () => {
-    // const filteredCustomers = customers.filter((customer) =>
-    const filtered = customers.filter((customer) =>
-      customer.customerName.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+  // const handleSearchClick = () => {
+  //   // const filteredCustomers = customers.filter((customer) =>
+  //   const filtered = customers.filter((customer) =>
+  //     customer.customerName.toLowerCase().includes(searchQuery.toLowerCase())
+  //   );
 
-    setFilteredCustomers(filtered);
-  };
+  //   setFilteredCustomers(filtered);
+  // };cmd
   const FindByName = async () => {
    await axios
       .get(

@@ -1,9 +1,9 @@
 import axios from "axios";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 // import data from './data/mock-data.'
-import FetchById from "./FetchById";
-import { Pagination } from "react-bootstrap";
+// import FetchById from "./FetchById";cmd
+// import { Pagination } from "react-bootstrap";cmd
 
 export default function FetchAll() {
   const [customers, setCustomers] = useState([]);
@@ -12,13 +12,13 @@ export default function FetchAll() {
   useEffect(() => {
     loadCustomers();
   }, []);
-  const handleReset = () => {
-    loadCustomers();
-  };
-  const deleteCustomer = async () => {
-    await axios.delete(`http://localhost:8080/delete/${fetch}`);
-    loadCustomers();
-  };
+  // const handleReset = () => {
+  //   loadCustomers();
+  // };cmd
+  // const deleteCustomer = async () => {
+  //   await axios.delete(`http://localhost:8080/delete/${fetch}`);
+  //   loadCustomers();
+  // };cmd
   const loadCustomers = async () => {
     try {
       const result = await axios.get("http://localhost:8080/fetchAllCustomer");
@@ -28,16 +28,16 @@ export default function FetchAll() {
       console.error("Error loading customers:", error);
     }
   };
-  const fetchRecord = async (e) => {
-    e.preventDefault();
-    return await axios
-      .get(`http://localhost:8080/fetchCustomerId?customerId=${fetch}`)
-      .then((Response) => {
-        setCustomers(Response.data.customer);
-        setFetch("");
-      })
-      .catch((err) => console.log(err));
-  };
+  // const fetchRecord = async (e) => {
+  //   e.preventDefault();
+  //   return await axios
+  //     .get(`http://localhost:8080/fetchCustomerId?customerId=${fetch}`)
+  //     .then((Response) => {
+  //       setCustomers(Response.data.customer);
+  //       setFetch("");
+  //     })
+  //     .catch((err) => console.log(err));
+  // };cmd
   //--Pagination--
   const chunkedCustomers = [];
   for (let i = 0; i < customers.length; i += 10) {

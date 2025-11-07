@@ -1,13 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function Update3() {
   let navigate = useNavigate();
   // const { customerId } = useParams();
   const [errors, setErrors] = useState({});
-const [fetch,setFetch]=useState({
-  customerId: ""
-})
+// const [fetch,setFetch]=useState({
+//   customerId: ""
+// })cmd
   const [customers, setCustomer] = useState({
     customerId: "",
     customerName: "",
@@ -24,17 +24,17 @@ const [fetch,setFetch]=useState({
   });
 
   
-  const onIdChange = (e) => {
-    setFetch({ customerId: e.target.value });
-    // record:true;
-    // setRecord(true);
-  };
+  // const onIdChange = (e) => {
+  //   setFetch({ customerId: e.target.value });
+  //   // record:true;
+  //   // setRecord(true);
+  // };cmd
   const onInputChange = (e) => {
     setCustomer({ ...customers, [e.target.name]: e.target.value });
   };
-  useEffect(() => {
-    loadCustomer();
-  }, []);
+  // useEffect(() => {
+  //   loadCustomer();
+  // }, []);cmd
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -147,7 +147,7 @@ const [fetch,setFetch]=useState({
       console.error("Error fetching customers:", error);
     }
   };
-  const [valid, setValid] = useState(false);
+  // const [valid, setValid] = useState(false);cmd
   return (
     <div className="container" style={{ borderTopLeftRadius: "50px" }}>
       {/* <div className="table"> */}

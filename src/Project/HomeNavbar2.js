@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Nav, NavDropdown } from "react-bootstrap";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default class HomeNavbar2 extends Component {
   constructor(props){
@@ -23,7 +23,7 @@ export default class HomeNavbar2 extends Component {
     this.state({display:false});
   }
   show=()=>{
-    if(this.state.display==true){
+    if(this.state.display===true){
       this.setState({"display":true})
     }else{
       this.setState({"display":false})
@@ -31,9 +31,9 @@ export default class HomeNavbar2 extends Component {
   }
   render() {
     // var params=this.props.match.params;
-    const {display}=this.state;
+    // const {display}=this.state;cmd
     const {loggedIn}=this.props;
-    const {loggedOut}=this.props;
+    // const {loggedOut}=this.props;cmd
     // const {hid}=this.hide();
     return (
       <div>

@@ -1,26 +1,26 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function FindByName() {
   const [customers, setCustomers] = useState({
     customerName: "",
   });
   const [fetch, setFetch] = useState([]);
-  const [filteredCustomers, setFilteredCustomers] = useState([]);
+  // const [filteredCustomers, setFilteredCustomers] = useState([]);cmd
   
 // const recod=[];
-  const loadCustomers = async () => {
-    try {
-      const result = await axios.get("http://localhost:8080/fetchAllCustomer");
-      setFetch(result.data.listCustomer);
-      // setFilteredCustomers(result.data.listCustomer);
-      console.log(result.data);
-    } catch (error) {
-      console.error("Error loading customers:", error);
-    }
-  };
+  // const loadCustomers = async () => {
+  //   try {
+  //     const result = await axios.get("http://localhost:8080/fetchAllCustomer");
+  //     setFetch(result.data.listCustomer);
+  //     // setFilteredCustomers(result.data.listCustomer);
+  //     console.log(result.data);
+  //   } catch (error) {
+  //     console.error("Error loading customers:", error);
+  //   }
+  // };cmd
   useEffect(() => {
     // loadCustomers();
   }, []);
@@ -98,9 +98,9 @@ export default function FindByName() {
   };
 
     
-  const handleSearchChange = (event) => {
-    setCustomers(event.target.value);
-  };
+  // const handleSearchChange = (event) => {
+  //   setCustomers(event.target.value);
+  // };cmd
   // const itemPerPage = 10;
   // const [currentPage, setCurrentPage] = useState(1);
 

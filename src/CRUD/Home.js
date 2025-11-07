@@ -1,37 +1,37 @@
-import React, { Component, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import Login from "./Login";
-import Log from "./Log";
+// import Login from "./Login";cmd
+// import Log from "./Log";cmd
 import axios from "axios";
 import "./Home.css";
-import { propTypes } from "react-bootstrap/esm/Image";
+// import { propTypes } from "react-bootstrap/esm/Image";cmd
 import { useParams } from "react-router-dom";
-import { Email, Password } from "@mui/icons-material";
+// import { Email, Password } from "@mui/icons-material";cmd
 export default function Home(props) {
   const items = [];
-  const totalCustomers = items.reduce(
-    (total, items) => total + items.integer,
-    0
-  );
+  // const totalCustomers = items.reduce(
+  //   (total, items) => total + items.integer,
+  //   0
+  // );cmd
 
   const [fetch, setFetch] = useState(0);
 
-  const [customers, setCustomers] = useState([]);
+  // const [customers, setCustomers] = useState([]);cmd
   useEffect(() => {
     // loadCustomer();
     all();
     // loadCustomers();
   }, []);
 
-  const loadCustomers = async () => {
-    try {
-      const result = await axios.get("http://localhost:8080/fetchAllCustomer");
-      setCustomers(result.data.listCustomer);
-      console.log(result.data);
-    } catch (error) {
-      console.error("Error loading customers:", error);
-    }
-  };
+  // const loadCustomers = async () => {
+  //   try {
+  //     const result = await axios.get("http://localhost:8080/fetchAllCustomer");
+  //     setCustomers(result.data.listCustomer);
+  //     console.log(result.data);
+  //   } catch (error) {
+  //     console.error("Error loading customers:", error);
+  //   }
+  // };cmd
   const all = async () => {
     try {
       const resut = await axios.get("http://localhost:8080/CustomersCount");
@@ -43,7 +43,7 @@ export default function Home(props) {
     }
   };
   // var params=props.match.params;
-  let { eMail, Password } = useParams();
+  // let { eMail, Password } = useParams();cmd
   return (
     <div>
       <Container fluid className="con">

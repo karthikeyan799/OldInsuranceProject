@@ -1,4 +1,4 @@
-import { Home } from '@mui/icons-material';
+ 
 import React from 'react'
 import { Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
@@ -9,9 +9,7 @@ export default function Navbar() {
     <div>
         <Nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">
-                    INSURANCE aPPLICATION Login
-                </a>
+               
                 <button className="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"

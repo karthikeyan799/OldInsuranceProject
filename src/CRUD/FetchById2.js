@@ -1,6 +1,6 @@
-import axios from "axios";
-import React, { Component, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+// import axios from "axios";cmd
+import React, { Component,  } from "react";
+import { Link } from "react-router-dom";
 
 export default class FetchById2 extends Component {
     constructor(props){

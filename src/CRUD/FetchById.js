@@ -1,14 +1,14 @@
 // import React, { Component, useState ,useEffect} from 'react'
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { useState } from "react";
+import {  useParams } from "react-router-dom";
 export default function FetchById() {
   const [fetch, setFetch] = useState({
     customerId:'',
     customerName:""
   });
   const [records,setRecord]=useState(false);
-  const {id} =useParams();
+  // const {id} =useParams();cmd
   const [errors, setErrors] = useState({});
 
   const onInputChange = (e) => {
@@ -19,7 +19,7 @@ export default function FetchById() {
   // const [isValid,setIsValid]=useState(false);
   //  isValid=/^\d+$/.test(fetch.customerId)&& fetch.customerId.length===0;
   
-  const [isValid,setIsValid]=useState(false); 
+  // const [isValid,setIsValid]=useState(false); cmd
   const fetchRecord = async () => {
     const validationErrors = validateForm(fetch);
     if (Object.keys(validationErrors).length===0) {
@@ -124,7 +124,7 @@ export default function FetchById() {
     return errors;
   }
   
-  const [isSubmit, setIsSubmit] = useState(null)
+  // const [isSubmit, setIsSubmit] = useState(null)cmd
   return (
     <div
       className="container"

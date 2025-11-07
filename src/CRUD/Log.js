@@ -1,11 +1,13 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import "./Log.css";
-import { Link, Navigate, useNavigate, withRouter } from "react-router-dom";
+import { Link,
+  //  Navigate, useNavigate, withRoutercmd
+   } from "react-router-dom";
 import axios from "axios";
-import HomeHeader from "../Project/HomeHeader";
-import Home from "./Home";
-import Profile from "./Profile";
-import { Email } from "@mui/icons-material";
+// import HomeHeader from "../Project/HomeHeader";cmd
+// import Home from "./Home";cmd
+// import Profile from "./Profile";cmd
+// import { Email } from "@mui/icons-material";cmd
 export default class Log extends Component {
 constructor(props){
   super(props);
@@ -56,8 +58,8 @@ constructor(props){
       }).then((res) =>
         {
          console.log(res.data.message);
-         const user=res.data.message==="Email not exits";
-         const pass=res.data.message === "Login Success";
+        //  const user=res.data.message==="Email not exits";cmd
+        //  const pass=res.data.message === "Login Success";cmd
          if (res.data.message === "Email not exits")
          {
 

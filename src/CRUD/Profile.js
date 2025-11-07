@@ -1,8 +1,8 @@
-import React, { Component, useEffect, useState } from "react";
-import Log from "./Log";
-import Registration from "./Registration";
+// import React, { Component, useEffect, useState } from "react";cmd
+// import Log from "./Log";cmd
+// import Registration from "./Registration";cmd
 import axios from "axios";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";cmd
 
 export default function Profile({fetch}) {
   // const[user,setUser]=useState({
@@ -12,23 +12,23 @@ export default function Profile({fetch}) {
   //   eMail:''
   // })
   // eslint-disable-next-line no-useless-constructor
-  let {userName}=useParams();
+  // let {userName}=useParams();cmd
  
   // useEffect(()=>{
   //   loadUser();
   // }, []);
-  const loadUser = async () => {
-    const result = await axios.post(
-      `http://localhost:8080/save/{userName}`
+  // const loadUser = async () => {
+  //   const result = await axios.post(
+  //     `http://localhost:8080/save/{userName}`
      
-      // register
-      // `http://localhost:8080/updateCustomer?customerId=${customers.customerId}`,
-      // customers
+  //     // register
+  //     // `http://localhost:8080/updateCustomer?customerId=${customers.customerId}`,
+  //     // customers
       
-    )
-    // setUser(result.data);
-    // console.log(result.data);
-  }
+  //   )
+  //   // setUser(result.data);
+  //   // console.log(result.data);
+  // }cmd
     return (
       <div style={{ padding: "70px" }} className="bg-success">
         {/* id:{fetch.userId} */}

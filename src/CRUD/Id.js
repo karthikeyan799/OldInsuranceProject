@@ -1,9 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';cmd
 
 export default function  Id() {
     var fetch=true;
-    var style
         
     
   return (

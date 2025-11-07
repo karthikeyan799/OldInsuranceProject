@@ -32,22 +32,22 @@ export default function Registration(props) {
       alert(err);
     }
   };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(
-        "http://localhost:8080/registration",
-        register
-      );
-      // Handle success, maybe redirect the user.
-      setRegister(response.data.registered);
-      console.log(response.data);
-      alert("Registration Successfull...");
-      navigate("/fetchAll");
-    } catch (error) {
-      console.error("Registration error:", error);
-    }
-  };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await axios.post(
+  //       "http://localhost:8080/registration",
+  //       register
+  //     );
+  //     // Handle success, maybe redirect the user.
+  //     setRegister(response.data.registered);
+  //     console.log(response.data);
+  //     alert("Registration Successfull...");
+  //     navigate("/fetchAll");
+  //   } catch (error) {
+  //     console.error("Registration error:", error);
+  //   }
+  // };cmd
   return (
     <div>
       <link

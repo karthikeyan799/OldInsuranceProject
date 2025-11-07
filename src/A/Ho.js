@@ -17,28 +17,28 @@ export default function Ho(props) {
     const { name, value } = e.target;
     setfetch({ ...fetch, [name]: value });
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // alert('alert')
-    if (fetch.userName === "karthi" && fetch.password === "") {
-      alert("Loged in successfull");
-      navigate("/home");
-    }
-  };
-  const [error,setErrors]=useState({});
-function validateForm(){
-  let errors={};
-  if(fetch.userName===''){
-    errors.userName='Name is Required';
-  }
-    else if (
-    !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/i.test(
-      fetch.userName
-    )
-  ) {
-    errors.userName = "Invalid email address";
-  }
-}
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // alert('alert')
+  //   if (fetch.userName === "karthi" && fetch.password === "") {
+  //     alert("Loged in successfull");
+  //     navigate("/home");
+  //   }
+  // };cmd
+  // const [error,setErrors]=useState({});cmd
+// function validateForm(){
+//   let errors={};
+//   if(fetch.userName===''){
+//     errors.userName='Name is Required';
+//   }
+//     else if (
+//     !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/i.test(
+//       fetch.userName
+//     )
+//   ) {
+//     errors.userName = "Invalid email address";
+//   }
+// }cmd
   const login = async (e) => {
     e.preventDefault();
     // const validationErrors = validateForm(fetch);
@@ -59,8 +59,8 @@ function validateForm(){
         .post("http://localhost:8080/loginUser", { userName, password })
         .then((res) => {
           console.log(res.data.message);
-          const user = res.data.message === "Email not exits";
-          const pass = res.data.message === "Login Success";
+          // const user = res.data.message === "Email not exits";cmd
+          // const pass = res.data.message === "Login Success";cmd
          if (res.data.message === "Email not exits") {
             setfetch({ eMailError: "Invalid UserName",
             passwordError:"Invalid Password "});

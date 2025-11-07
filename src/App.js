@@ -1,15 +1,12 @@
 import "./App.css";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Navbar from "./Project/Navbar"; 
 import Home from "./CRUD/Home";
 // import { Login } from "@mui/icons-material";
 import HomeHeader from "./Project/HomeHeader";
 import Registration from "./CRUD/Registration";
 import Login from "./CRUD/Login";
-import FetchById from "./CRUD/FetchById";
 import FetchAll from "./CRUD/FetchAll";
 import Log from "./CRUD/Log";
-
 function App() {
   return (
     <div className="App">

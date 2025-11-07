@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Log.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";cmd
 export default class LogOut extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +17,7 @@ export default class LogOut extends Component {
     };
   }
 hide=()=>{
-    if(this.state.display==true){
+    if(this.state.display===true){
       this.setState({"display":false})
     }else{
       this.setState({"display":true})

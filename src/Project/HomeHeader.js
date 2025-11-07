@@ -5,7 +5,6 @@ import {
   Route,
   BrowserRouter as Router,
   Routes,
-  useNavigate,
 } from "react-router-dom";
 import Home from "../CRUD/Home";
 import Update from "../CRUD/Update";
@@ -24,7 +23,7 @@ import { Container, Nav, Row } from "react-bootstrap";
 import Navbar from "./Navbar";
 import Id from "../CRUD/Id";
 import Log from "../CRUD/Log";
-import LogOut from "../CRUD/LogOut";
+// import LogOut from "../CRUD/LogOut";
 import Find from "../Custom/Find";
 import Customer from "../CRUD/Customer";
 import Ho from "../A/Ho";
@@ -35,22 +34,22 @@ import AddPolicy from "../Policy/AddPolicy";
 
 export default function HomeHeader(props) {
   const [loggedIn, setLoggedIn] = useState(false);//false
-  const [loggedOut, setLoggedOut] = useState(false);
+  // const [loggedOut, setLoggedOut] = useState(false);cmd
   const [display, setDisplay] = useState(true);
   // const navigate = useNavigate();
   // const [redirect,setRedirect]=useState(false);
-  const demo = true;
-  const hide = () => {
-    if (display === true) {
-      setDisplay({ display: false });
-    } else {
-      setDisplay({ display: true });
-    }
-  };
-  const [user, setUser] = useState(null);
-  const handleSubmit = (fetch) => {
-    setUser(fetch);
-  };
+  // const demo = true;cmd
+  // const hide = () => {
+  //   if (display === true) {
+  //     setDisplay({ display: false });
+  //   } else {
+  //     setDisplay({ display: true });
+  //   }
+  // };cmd
+  // const [user, setUser] = useState(null);cmd
+  // const handleSubmit = (fetch) => {
+  //   setUser(fetch);
+  // };cmd
   const out = () => {
     // alert("Are You LogOut !");
     alert("LogOut is Successfully...");

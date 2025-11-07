@@ -1,8 +1,10 @@
 import React, { Component, useState } from "react";
-import { Link, Route, Router, Routes, unstable_HistoryRouter, useNavigate } from "react-router-dom";
-import Navbar from "../Project/Navbar";
-import Home from "./Home";
-import Registration from "./Registration";
+import { Link, 
+  // Route, Router, Routes, unstable_HistoryRouter, useNavigate //cmd
+ } from "react-router-dom";
+// import Navbar from "../Project/Navbar";cmd
+// import Home from "./Home";cmd
+// import Registration from "./Registration";cmd
 import axios from "axios";
 
 export default class Login extends Component {
@@ -15,7 +17,7 @@ export default class Login extends Component {
     };
   }
   show=()=>{
-      if(this.state.display==true){
+      if(this.state.display===true){
         this.setState({"display":true})
       }else{
         this.setState({"display":false})
@@ -37,7 +39,7 @@ export default class Login extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
    handleLogin = async () => {
-    const { userName, password } = this.state;
+    // const { userName, password } = this.state;cmd
     try {
       const response = await axios.post("http://localhost:8080/save", 
        // { userName, password }
