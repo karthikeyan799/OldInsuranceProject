@@ -40,18 +40,18 @@ export default function FetchAll() {
   //     })
   //     .catch((err) => console.log(err));
   // };cmd
-  //--Pagination--
-  const chunkedCustomers = [];
-  for (let i = 0; i < customers.length; i += 10) {
-    chunkedCustomers.push(customers.slice(i, i + 10));
-  }
-  const itemPerPage = 10;
-  const [currentPage, setCurrentPage] = useState(1);
+  //--Pagination--// cmd
+  // const chunkedCustomers = [];
+  // for (let i = 0; i < customers.length; i += 10) {
+  //   chunkedCustomers.push(customers.slice(i, i + 10));
+  // }//cmd
+  // const itemPerPage = 10;
+  // const [currentPage, setCurrentPage] = useState(1);
 
-  const startIndex = (currentPage - 1) * itemPerPage;
-  const endIndex = startIndex + itemPerPage;
+  // const startIndex = (currentPage - 1) * itemPerPage;
+  // const endIndex = startIndex + itemPerPage;
 
-  const currentCustomers = customers.slice(startIndex, endIndex);
+  // const currentCustomers = customers.slice(startIndex, endIndex);
 
   // const handlePageChange = (newPage) => {
   //   setCurrentPage(newPage);
@@ -152,8 +152,8 @@ export default function FetchAll() {
             </thead>
             <tbody>
               {
-                // customers.map((customer, index) => (
-                currentCustomers.map((customer, index) => (
+                customers.map((customer, index) => (
+                // currentCustomers.map((customer, index) => (//cmd
                   <tr>
                     <th scope="row" key={index}>
                       {customer.customerId}
