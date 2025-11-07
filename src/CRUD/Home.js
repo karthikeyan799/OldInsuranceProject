@@ -34,7 +34,9 @@ export default function Home(props) {
   // };cmd
   const all = async () => {
     try {
-      const resut = await axios.get("http://localhost:8080/CustomersCount");
+      const resut = await axios.get(
+        // "http://localhost:8080/CustomersCount");
+           "https://springprojectinsurance-production-87a1.up.railway.app/CustomersCount");
       setFetch(resut.data.integer);
       console.log(resut.data);
     } catch (err) {
