@@ -200,7 +200,7 @@ export default function FetchAll() {
             </tbody>
           </table>
           {/* Pagination Control */}
-          <div className="text-center  pagi">
+          {/* <div className="text-center  pagi">
             <button
               className="b1 mb-1 "
               onClick={() => handlePageChange(currentPage - 1)}
@@ -215,7 +215,7 @@ export default function FetchAll() {
             >
               Next
             </button>
-          </div>
+          </div>// cmd */}
           {/* </table> */}
           {/* <Pagination
         className="pagination-bar"

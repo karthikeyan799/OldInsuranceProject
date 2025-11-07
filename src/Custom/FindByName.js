@@ -61,7 +61,9 @@ export default function FindByName() {
       // const result = await
       axios
         .get(
-          `http://localhost:8080/findByCustomerName?customerName=${customers.customerName}`
+          // `http://localhost:8080/findByCustomerName?customerName=${customers.customerName}`
+          ` https://springprojectinsurance-production-87a1.up.railway.app/findByCustomerName?customerName=${customers.customerName}`
+         
         )
         .then((result) => {
           const total = result.data.customized;
