@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, {  useState } from "react";
-import { useNavigate } from "react-router-dom";
 export default function Update3() {
   // let navigate = useNavigate();cmd
   // const { customerId } = useParams();

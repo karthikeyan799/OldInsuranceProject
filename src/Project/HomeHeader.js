@@ -56,19 +56,19 @@ export default function HomeHeader(props) {
     // navigate("/logged",{replace: true});
     // setLoggedIn(false) ;
   };
-  const [showConfirmation, setConfirmation] = useState(false);
+  // const [showConfirmation, setConfirmation] = useState(false);cmd
 
-  const showAlert = () => {
-    alert('you clicked "yes');
-    setConfirmation(false);
-  };
-  const handleYesClick = () => {
-    showAlert();
-  };
-  const handleNoClick = () => {
-    alert('you clicked "no');
-    setConfirmation(false);
-  };
+  // const showAlert = () => {
+  //   alert('you clicked "yes');
+  //   setConfirmation(false);
+  // };
+  // const handleYesClick = () => {
+  //   showAlert();
+  // };cmd
+  // const handleNoClick = () => {
+  //   alert('you clicked "no');
+  //   setConfirmation(false);
+  // };cmd
   // const renderConfirmationDialog = () => {
   //   if (showConfirmation) {
   //     return (

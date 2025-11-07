@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { useParams } from "react-router-dom";
 export default function Update() {
   // let navigate = useNavigate();
@@ -9,7 +9,7 @@ export default function Update() {
   //   customerId: "",
   // });cmd
   
-  const [isSubmit, setIsSubmit] = useState(false);
+  // const [isSubmit, setIsSubmit] = useState(false);cmd
   const [customers, setCustomer] = useState({
     customerId: "",
     customerName: "",
@@ -71,7 +71,7 @@ export default function Update() {
 
         console.log(datas);
         // setRecord(true);
-        setIsSubmit(true)
+        // setIsSubmit(true)cmd
         setErrors("");
       }
     } catch (err) {

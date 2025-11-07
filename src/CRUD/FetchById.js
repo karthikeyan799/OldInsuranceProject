@@ -1,7 +1,6 @@
 // import React, { Component, useState ,useEffect} from 'react'
 import axios from "axios";
 import React, { useState } from "react";
-import {  useParams } from "react-router-dom";
 export default function FetchById() {
   const [fetch, setFetch] = useState({
     customerId:'',

@@ -1,7 +1,7 @@
 // import React, { Component, useEffect, useState } from "react";cmd
 // import Log from "./Log";cmd
 // import Registration from "./Registration";cmd
-import axios from "axios";
+
 // import { useParams } from "react-router-dom";cmd
 
 export default function Profile({fetch}) {

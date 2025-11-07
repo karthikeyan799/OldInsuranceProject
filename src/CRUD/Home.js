@@ -5,10 +5,10 @@ import { Col, Container, Row } from "react-bootstrap";
 import axios from "axios";
 import "./Home.css";
 // import { propTypes } from "react-bootstrap/esm/Image";cmd
-import { useParams } from "react-router-dom";
+
 // import { Email, Password } from "@mui/icons-material";cmd
 export default function Home(props) {
-  const items = [];
+  // const items = [];cmd
   // const totalCustomers = items.reduce(
   //   (total, items) => total + items.integer,
   //   0

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function FetchAll() {
   const [customers, setCustomers] = useState([]);
-  const [fetch, setFetch] = useState("");
+  // const [fetch, setFetch] = useState("");cmd
 
   useEffect(() => {
     loadCustomers();

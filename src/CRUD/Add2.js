@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 // import { Col, Row } from "react-bootstrap";cmd
 // import { useNavigate } from "react-router-dom";cmd
 
@@ -98,12 +98,12 @@ export default function Add2() {
       }
   };
 
-  useEffect(() => {
-    console.log(errors);
-    if (Object.keys(errors).length === 0 && isSubmit) {
-      console.log(errors);
-    }
-  }, []);
+  // useEffect(() => {
+  //   console.log(errors);
+  //   if (Object.keys(errors).length === 0 && isSubmit) {
+  //     console.log(errors);
+  //   }
+  // }, []);cmd
 
   return (
     <div className="conatainer mt-0">
