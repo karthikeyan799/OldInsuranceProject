@@ -542,11 +542,11 @@ export default function Add2() {
 // const isDuplicateEmail=existing.some((entry)=>entry.eMail===customers.eMail);cmd
 
 // const isDuplicatePhone=existing.some((entry)=>entry.phoneNumber===customers.phoneNumber);cmd
-if(isDuplicateEmail||isDuplicatePhone){
-  errors.phoneNumber="this number is already used";
-  errors.eMail="this Email is already used";  
-alert("duplicate violation")
-}
+// if(isDuplicateEmail||isDuplicatePhone){
+//   errors.phoneNumber="this number is already used";
+//   errors.eMail="this Email is already used";  
+// alert("duplicate violation")
+// }
     if (customers.eMail==='') {
       errors.eMail = "Email is required";
       // } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(customers.email)) {
