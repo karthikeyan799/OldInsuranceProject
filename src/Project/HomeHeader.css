@@ -1,0 +1,75 @@
+
+.img{
+    background-image: url('/insurance23.jpg');
+    background-repeat:repeat;
+    background-attachment: fixed;
+    background-position-y: center;
+    padding-left: 0;
+    background-size: cover;
+    /* background-color:darkgray */
+}
+.logo{
+    background-image: url("/logo3.jpg");
+    width: 45px;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    height: 45px;
+}
+.side{
+    margin-bottom: 20px;
+    height: 91vh; 
+    float: left;
+    background-color:rgb(85, 164, 103);
+    text-transform: uppercase;
+}
+.side ul li{
+margin-top: 15px; 
+/* padding-left: 10px; */
+list-style-type: none;
+/* padding-top: 10px; */
+/* padding-bottom: 10px; */
+/* padding: 10px; */
+/* width: 100px; */
+/* margin-left: 90px; */
+}
+li{
+    /* background-color: black; */
+    /* : black; */
+}
+.side ul{
+    margin-top: 100px;
+    /* background-color: blue;  */
+    /* padding-top:10px ; */
+    /* padding-bottom: 10px;  */
+    padding-right:10px; 
+    margin-left: -20px;
+    border-radius: 20px;
+} 
+.link{
+    width: 100%;
+    /* color: black; */
+    background-color:forestgreen;
+    /* margin-top: 90px; */
+    /* margin-left: 80px; */
+}
+.outline-light{
+    /* padding: 10px; */
+    border: 2px;
+    padding-left: 10px;
+    border-top: 60px;
+    padding-right: 10px;
+    background-color: goldenrod;
+    border-radius: 30px;
+    text-decoration: none;
+}
+.head{
+    margin-top: -7px;
+} 
+.header{
+    padding: 3px;
+    background-color: forestgreen;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+
+} 

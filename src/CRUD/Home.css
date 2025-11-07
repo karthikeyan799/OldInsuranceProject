@@ -1,0 +1,199 @@
+.custom {
+    /* border-radius: 20x; */
+    /* border-end-end-radius: 50px; */
+    width: 50%;
+    text-align: center;
+    border-radius: 0px;
+    /* padding-left: 90px; */
+    /* border-left: 90px; */
+    margin-left: 25%;
+    margin-right: 90px;
+    align-content: center;
+    /* padding-left: 90px; */
+
+
+}
+
+.life {
+    background-image: url("/in3back.jpg");
+    background-repeat: no-repeat;
+    width: 800px;
+    height: 700px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.welcome {
+    /* margin-right: 50%; */
+    /* background-color: beige; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+/* h1{
+    margin-top: -90px;
+} */
+.home {
+    background-color: #71a3a8;
+    /* margin-top: 50px; */
+    padding: 50px;
+    width: 600px;
+    margin-left: 100px;
+    border-radius: 15px;
+    margin: 5%;
+}
+
+.about {
+    background-color: rgb(139, 139, 195);
+    padding: 50px;
+    /* margin-right: 0px; */
+    margin: 5%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 30px;
+    /* margin-bottom: 50px; */
+}
+
+.contact {
+    background-color: #b8bedd;
+    padding: 50px;
+    border-radius: 30px;
+    margin: 5%;
+}
+
+.con {
+    /* background-color:rgb(179, 230, 170); */
+    background-color: rgb(139, 139, 195);
+    /* background-attachment: fixed; */
+    /* background-image: url("/i.jpg");
+    background-repeat: no-repeat; */
+    margin-top: -30px;
+    width: 1390px;
+    height: 1310px;
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* .class{
+    background-image: url("/14625719_Tiny\ doctor\ giving\ health\ insurance.jpg");
+} */
+.home2 {
+    margin-top: 60px;
+    border-radius: 20px;
+    background-color: #b8bedd;
+    padding: 20px;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.rc {
+    background-color: #71a3a8;
+    margin: 2px;
+    padding-top: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.insu {
+    height: 380px;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    padding-top: 0px;
+    /* background-color: rgb(246, 246, 248); */
+    background-color: white;
+    transition: transform.2s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.insu:hover {
+    transform: scale(1.1);
+}
+
+h3 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: xx-large;
+}
+
+.cont {
+    /* background-color:  */
+    font-size: large;
+    font-family: cursive;
+}
+
+.type {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+.what {
+    background-image: url("/240.jpg");
+    height: 220px;
+    width: 350px;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    margin: 10px;
+    margin-top: 60px;
+    margin-left: 30px;
+}
+
+.whati {
+    margin: 10px;
+
+}
+
+.whatr {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* background-color: rgb(149, 198, 116); */
+    background-color: #a3b8df;
+}
+
+.whatc {
+    border-color: blueviolet;
+    border-radius: 20px;
+    padding-top: 30px;
+    background-color: #b8bedd;
+    margin: 15px;
+    font-size: larger;
+}
+
+.h2 {
+    font-family: monospace;
+}
+
+.headinsu {
+    background-color: rgb(48, 88, 54);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    margin-bottom: 50px;
+    margin: 10px;
+    /* border-bottom-right-radius: 90px;
+    border-bottom-left-radius: 90px; */
+    /* border-top-right-radius: 90px; */
+
+    /* margin: 10px */
+}
+
+.homeImg {
+    /* background-image: url("/docinsu3.jpg"); */
+    background-image: url("/i2.jpg");
+    background-repeat: no-repeat;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    border-radius: 40px;
+    width: 486px;
+    height: 300px;
+}
+
+.i1 {
+    background-image: url("/trave.jpg");
+    height: 500px;
+    margin-top: 10px;
+    width: 300px;
+}
