@@ -53,9 +53,9 @@ export default function FetchAll() {
 
   const currentCustomers = customers.slice(startIndex, endIndex);
 
-  const handlePageChange = (newPage) => {
-    setCurrentPage(newPage);
-  };
+  // const handlePageChange = (newPage) => {
+  //   setCurrentPage(newPage);
+  // };cmd
   return (
     <div
       className="container responsive"
