@@ -1,6 +1,7 @@
 import axios from "axios";
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import { API_BASE_LINK } from "../API";
 export default function Update() {
   // let navigate = useNavigate();
   const { customerId } = useParams();
@@ -8,7 +9,7 @@ export default function Update() {
   // const [fetch, setFetch] = useState({
   //   customerId: "",
   // });cmd
-  
+
   // const [isSubmit, setIsSubmit] = useState(false);cmd
   const [customers, setCustomer] = useState({
     customerId: "",
@@ -57,7 +58,8 @@ export default function Update() {
     try {
       const result = await axios.post(
         // `http://localhost:8080/updateCustomer?customerId=${customers.customerId}`,
-          `https://springprojectinsurance-production-87a1.up.railway.app/updateCustomer?customerId=${customers.customerId}`,
+        // `https://springprojectinsurance-production-87a1.up.railway.app/updateCustomer?customerId=${customers.customerId}`,
+        `${API_BASE_LINK}updateCustomer?customerId=${customers.customerId}`,
         customers
       );
       const datas = result.data.customer;
@@ -68,7 +70,7 @@ export default function Update() {
         //     phoneNumberError:"Phone Number Already Exist" });
       } else {
         setCustomer(result.data.customer);
-        alert("Customer Id "+customers.customerId+" Update Successfull...");
+        alert("Customer Id " + customers.customerId + " Update Successfull...");
 
         console.log(datas);
         // setRecord(true);
@@ -98,7 +100,7 @@ export default function Update() {
     if (customers.customerId === "") {
       errors.customerId = "Please select Id";
       alert("Id is Required");
-    } 
+    }
     // else if (!/^[A-Za-z0-9]+$/.test(customers)) {
     //   errors.customerId = "Invalid characters in Customer ID";
     //   // alert("id")
@@ -129,8 +131,9 @@ export default function Update() {
     try {
       const record = await axios.get(
         // `http://localhost:8080/fetchCustomerId?customerId=${customers.customerId}`
-            //  `http://localhost:8080/fetchCustomerId?customerId=${customerId}`
-              `https://springprojectinsurance-production-87a1.up.railway.app/fetchCustomerId?customerId=${customerId}`
+        //  `http://localhost:8080/fetchCustomerId?customerId=${customerId}`
+        // `https://springprojectinsurance-production-87a1.up.railway.app/fetchCustomerId?customerId=${customerId}`
+        `${API_BASE_LINK}fetchCustomerId?customerId=${customerId}`
 
       );
       // alert("updated successfull");
@@ -182,7 +185,7 @@ export default function Update() {
                 name="customerId"
                 // onChange={onInputChange}
                 style={{ width: "15%" }}
-                // required
+              // required
               />
               <span className="input-group-text">
                 <i className="fa fa-search" onClick={loadCustomer}></i>
@@ -197,25 +200,25 @@ export default function Update() {
 
       {/* {valid ? ( */}
       <div className="conatainer ">
-        {/* {valid ? ( //karthi */} 
-          <form   
-            // onClick={(e) => onSubmit(e)}
-            onSubmit={(e)=>onSubmit(e)}
-            // onSubmit={onSubmit()}
-          // onSubmit={handleSubmit}
-          >
-            {/* {valid ? ( */}
-            <div className="row ">
-              <div
-                className="col-md-6 offset-md-3 bg-warning border rounder p-4 mt-2 mb-4 shadow"
-                style={{opacity: "0.9" }}
-              >
-                <h2 className="text-center m-2"> Update Customer</h2>
-                {/* <form onSubmit={(e) => onSubmit(e)}> */}
-                <div>
-                  <div className="row">
-                 
-            {/* {Object.keys(errors).length === 0 && isSubmit ? (
+        {/* {valid ? ( //karthi */}
+        <form
+          // onClick={(e) => onSubmit(e)}
+          onSubmit={(e) => onSubmit(e)}
+        // onSubmit={onSubmit()}
+        // onSubmit={handleSubmit}
+        >
+          {/* {valid ? ( */}
+          <div className="row ">
+            <div
+              className="col-md-6 offset-md-3 bg-warning border rounder p-4 mt-2 mb-4 shadow"
+              style={{ opacity: "0.9" }}
+            >
+              <h2 className="text-center m-2"> Update Customer</h2>
+              {/* <form onSubmit={(e) => onSubmit(e)}> */}
+              <div>
+                <div className="row">
+
+                  {/* {Object.keys(errors).length === 0 && isSubmit ? (
             <p className="text-success">  Update Customer Id {customers.customerId}
              is successfully...</p>
               
@@ -225,10 +228,10 @@ export default function Update() {
               // <p>unsuccessful</p>
             // )
           } */}
-                    {/* <div className="form-group mb-3">
+                  {/* <div className="form-group mb-3">
                 <div className="form-input mb-3"> */}
-                    {/* <div className="col"> */}
-                    {/* <div className="mb-3">
+                  {/* <div className="col"> */}
+                  {/* <div className="mb-3">
                       <label htmlFor="CustomerId" className="form-table">
                         customer Id
                       </label>
@@ -244,95 +247,95 @@ export default function Update() {
                         <span className="text-danger">{errors.customerId}</span>
                       )}
                     </div> */}
-                    {/* </div>  */}
-                    <div className="col">
-                      <div className="mb-3">
-                        <label htmlFor="CustomerName" className="form-table">
-                          customer Name
-                        </label>
-                        <input
-                          type={"text"}
-                          className="form-control"
-                          placeholder="Enter your name"
-                          name="customerName"
-                          value={customers.customerName}
-                          onChange={(e) => onInputChange(e)}
-                        />
-                        {errors.customerName && (
-                          <span className="error">{errors.customerName}</span>
-                        )}
-                      </div>
+                  {/* </div>  */}
+                  <div className="col">
+                    <div className="mb-3">
+                      <label htmlFor="CustomerName" className="form-table">
+                        customer Name
+                      </label>
+                      <input
+                        type={"text"}
+                        className="form-control"
+                        placeholder="Enter your name"
+                        name="customerName"
+                        value={customers.customerName}
+                        onChange={(e) => onInputChange(e)}
+                      />
+                      {errors.customerName && (
+                        <span className="error">{errors.customerName}</span>
+                      )}
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="col">
-                      <div className="mb-3">
-                        <label htmlFor="CustomerAge" className="form-table">
-                          CustomerAge
-                        </label>
-                        <input
-                          type={"number"}
-                          className="form-control"
-                          placeholder="Enter your name"
-                          name="customerAge"
-                          value={customers.customerAge}
-                          onChange={(e) => onInputChange(e)}
-                        />
-                        {errors.customerAge && (
-                          <span className="text-danger">
-                            {errors.customerAge}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    <div className="col">
-                      <div className="mb-3">
-                        <label htmlFor="E-Mail" className="form-table">
-                          E-Mail
-                        </label>
-                        <input
-                          type={"text"}
-                          className="form-control"
-                          placeholder="Enter your name"
-                          name="eMail"
-                          value={customers.eMail}
-                          onChange={(e) => onInputChange(e)}
-                        />
-                        {errors.eMail && (
-                          <span className="text-danger">{errors.eMail}</span>
-                        )}
-                      </div>
+                </div>
+                <div className="row">
+                  <div className="col">
+                    <div className="mb-3">
+                      <label htmlFor="CustomerAge" className="form-table">
+                        CustomerAge
+                      </label>
+                      <input
+                        type={"number"}
+                        className="form-control"
+                        placeholder="Enter your name"
+                        name="customerAge"
+                        value={customers.customerAge}
+                        onChange={(e) => onInputChange(e)}
+                      />
+                      {errors.customerAge && (
+                        <span className="text-danger">
+                          {errors.customerAge}
+                        </span>
+                      )}
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="col">
-                      <div className="mb-3">
-                        <label htmlFor="PhoneNumber" className="form-table">
-                          PhoneNumber
-                        </label>
-                        <input
-                          type={"text"}
-                          className="form-control"
-                          placeholder="Enter your name"
-                          name="phoneNumber"
-                          value={customers.phoneNumber}
-                          onChange={(e) => onInputChange(e)}
-                        />
-                        {errors.phoneNumber && (
-                          <span className="text-danger">
-                            {errors.phoneNumber}
-                          </span>
-                        )}
-                      </div>
+                  <div className="col">
+                    <div className="mb-3">
+                      <label htmlFor="E-Mail" className="form-table">
+                        E-Mail
+                      </label>
+                      <input
+                        type={"text"}
+                        className="form-control"
+                        placeholder="Enter your name"
+                        name="eMail"
+                        value={customers.eMail}
+                        onChange={(e) => onInputChange(e)}
+                      />
+                      {errors.eMail && (
+                        <span className="text-danger">{errors.eMail}</span>
+                      )}
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="col">
-                      <div className="mb-3">
-                        <label htmlFor="City" className="form-table">
-                          City
-                        </label>
-                        {/* <input
+                </div>
+                <div className="row">
+                  <div className="col">
+                    <div className="mb-3">
+                      <label htmlFor="PhoneNumber" className="form-table">
+                        PhoneNumber
+                      </label>
+                      <input
+                        type={"text"}
+                        className="form-control"
+                        placeholder="Enter your name"
+                        name="phoneNumber"
+                        value={customers.phoneNumber}
+                        onChange={(e) => onInputChange(e)}
+                      />
+                      {errors.phoneNumber && (
+                        <span className="text-danger">
+                          {errors.phoneNumber}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col">
+                    <div className="mb-3">
+                      <label htmlFor="City" className="form-table">
+                        City
+                      </label>
+                      {/* <input
                   type={"text"}
                   className="form-control"
                   placeholder="Enter your name"
@@ -340,69 +343,69 @@ export default function Update() {
                   value={city}
                   onChange={(e) => onInputChange(e)}
                 ></input> */}
-                        <select
-                          className={
-                            "form-control" +
-                            (customers.cityError ? "is-invalid" : "")
-                          }
-                          id="productdetails"
-                          value={customers.city}
-                          name="city"
-                          onChange={(e) => onInputChange(e)}
-                        >
-                          <option value="0">Select</option>
-                          <option value="8450" hidden>
-                            Respect Senior Care Rider
-                          </option>
-                          <option value="Ariyalur">Ariyalur</option>
-                          <option value="Chengalpattu">Chengalpattu</option>
-                          <option value="Chennai">Chennai</option>
-                          <option value="Coimbatore">Coimbatore</option>
-                          <option value="Cuddalore">Cuddalore</option>
-                          <option value="Dharmapuri">Dharmapuri</option>
-                          <option value="Dindugal">Dindugal</option>
-                          <option value="Erode">Erode</option>
-                          <option value="Kallakurichi">Kallakurichi</option>
-                          <option value="Kanchipuram">Kanchipuram</option>
-                          <option value="Karur">Karur</option>
-                          <option value="Krishnagiri">Krishnagiri</option>
-                          <option value="Madurai">Madurai</option>
-                          <option value="Mayiladuthurai">Mayiladuthurai</option>
-                          <option value="Nagapattinam">Nagapattinam</option>
-                          <option value="Kanniyakumari">Kanniyakumari</option>
-                          <option value="Namakkal">Namakkal</option>
-                          <option value="Perambalure">Perambalure</option>
-                          <option value="Pudukottai">Pudukottai</option>
-                          <option value="Ramanadhapuram">Ramanadhapuram</option>
-                          <option value="Ranipet">Ranipet</option>
-                          <option value="Salem">Salem</option>
-                          <option value="Sivagangai">Sivagangai</option>
-                          <option value="Tenkasi">Tenkasi</option>
-                          <option value="Thanjavur">Thanjavur</option>
-                          <option value="Theni">Theni</option>
-                          <option value="Thiruvallure">Thiruvallure</option>
-                          <option value="Thiruvarur">Thiruvarur</option>
-                          <option value="Thoothukudi">Thoothukudi</option>
-                          <option value="Trichirappalli">Trichirappalli</option>
-                          <option value="Thirunelveli">Thirunelveli</option>
-                          <option value="Triuppure">Triuppure</option>
-                          <option value="Triruvannamalai">
-                            Triruvannamalai
-                          </option>
-                          <option value="Nilagiri">Nilagiri</option>
-                          <option value="Vellore">Vellore</option>
-                          <option value="Villupuram">Villupuram</option>
-                          <option value="Virudhunagar">Virudhunagar</option>
-                        </select>
-                        {/* <span className="text-danger">
+                      <select
+                        className={
+                          "form-control" +
+                          (customers.cityError ? "is-invalid" : "")
+                        }
+                        id="productdetails"
+                        value={customers.city}
+                        name="city"
+                        onChange={(e) => onInputChange(e)}
+                      >
+                        <option value="0">Select</option>
+                        <option value="8450" hidden>
+                          Respect Senior Care Rider
+                        </option>
+                        <option value="Ariyalur">Ariyalur</option>
+                        <option value="Chengalpattu">Chengalpattu</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Coimbatore">Coimbatore</option>
+                        <option value="Cuddalore">Cuddalore</option>
+                        <option value="Dharmapuri">Dharmapuri</option>
+                        <option value="Dindugal">Dindugal</option>
+                        <option value="Erode">Erode</option>
+                        <option value="Kallakurichi">Kallakurichi</option>
+                        <option value="Kanchipuram">Kanchipuram</option>
+                        <option value="Karur">Karur</option>
+                        <option value="Krishnagiri">Krishnagiri</option>
+                        <option value="Madurai">Madurai</option>
+                        <option value="Mayiladuthurai">Mayiladuthurai</option>
+                        <option value="Nagapattinam">Nagapattinam</option>
+                        <option value="Kanniyakumari">Kanniyakumari</option>
+                        <option value="Namakkal">Namakkal</option>
+                        <option value="Perambalure">Perambalure</option>
+                        <option value="Pudukottai">Pudukottai</option>
+                        <option value="Ramanadhapuram">Ramanadhapuram</option>
+                        <option value="Ranipet">Ranipet</option>
+                        <option value="Salem">Salem</option>
+                        <option value="Sivagangai">Sivagangai</option>
+                        <option value="Tenkasi">Tenkasi</option>
+                        <option value="Thanjavur">Thanjavur</option>
+                        <option value="Theni">Theni</option>
+                        <option value="Thiruvallure">Thiruvallure</option>
+                        <option value="Thiruvarur">Thiruvarur</option>
+                        <option value="Thoothukudi">Thoothukudi</option>
+                        <option value="Trichirappalli">Trichirappalli</option>
+                        <option value="Thirunelveli">Thirunelveli</option>
+                        <option value="Triuppure">Triuppure</option>
+                        <option value="Triruvannamalai">
+                          Triruvannamalai
+                        </option>
+                        <option value="Nilagiri">Nilagiri</option>
+                        <option value="Vellore">Vellore</option>
+                        <option value="Villupuram">Villupuram</option>
+                        <option value="Virudhunagar">Virudhunagar</option>
+                      </select>
+                      {/* <span className="text-danger">
                     {customers.cityError ? customers.cityError : ""}
                   </span> */}
-                        {errors.city && (
-                          <span className="text-danger">{errors.city}</span>
-                        )}
-                      </div>
+                      {errors.city && (
+                        <span className="text-danger">{errors.city}</span>
+                      )}
                     </div>
-                    {/* <div className="col">
+                  </div>
+                  {/* <div className="col">
                     <div className="mb-3">
                       <label htmlFor="State" className="form-table">
                         State{" "}
@@ -434,52 +437,52 @@ export default function Update() {
                       )}
                     </div>
                   </div> */}
-                    <div className="col">
-                      <div className="mb-3">
-                        <label htmlFor="Gender" className="form-table">
-                          Gender
-                        </label>
-                        <select
-                          id="productdetails"
-                          value={customers.gender}
-                          name="gender"
-                          onChange={(e) => onInputChange(e)}
-                          className={"form-control "}
-                        >
-                          <option value="">--Select--</option>
+                  <div className="col">
+                    <div className="mb-3">
+                      <label htmlFor="Gender" className="form-table">
+                        Gender
+                      </label>
+                      <select
+                        id="productdetails"
+                        value={customers.gender}
+                        name="gender"
+                        onChange={(e) => onInputChange(e)}
+                        className={"form-control "}
+                      >
+                        <option value="">--Select--</option>
 
-                          <option value="Male">Male</option>
-                          <option value="Female">Female</option>
-                        </select>
-                        {/* <span className="text-danger">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                      </select>
+                      {/* <span className="text-danger">
                     {customers.stateError ? customers.stateError : ""}
                   </span> */}
-                        {errors.gender && (
-                          <span className="text-danger">{errors.gender}</span>
-                        )}
-                      </div>
+                      {errors.gender && (
+                        <span className="text-danger">{errors.gender}</span>
+                      )}
                     </div>
                   </div>
-                  <div className="row">
-                    <div className="col">
-                      <div className="mb-3">
-                        <label htmlFor="Salary" className="form-table">
-                          Salary
-                        </label>
-                        <input
-                          type={"number"}
-                          className="form-control"
-                          placeholder="Enter your salary"
-                          name="salary"
-                          value={customers.salary}
-                          onChange={(e) => onInputChange(e)}
-                        />{" "}
-                        {errors.salary && (
-                          <span className="text-danger">{errors.salary}</span>
-                        )}
-                      </div>
+                </div>
+                <div className="row">
+                  <div className="col">
+                    <div className="mb-3">
+                      <label htmlFor="Salary" className="form-table">
+                        Salary
+                      </label>
+                      <input
+                        type={"number"}
+                        className="form-control"
+                        placeholder="Enter your salary"
+                        name="salary"
+                        value={customers.salary}
+                        onChange={(e) => onInputChange(e)}
+                      />{" "}
+                      {errors.salary && (
+                        <span className="text-danger">{errors.salary}</span>
+                      )}
                     </div>
-                    {/* <div className="col">
+                  </div>
+                  {/* <div className="col">
                     <div className="mb-3">
                       <label htmlFor="CreaditLimit" className="form-table">
                         CreaditLimit
@@ -499,28 +502,28 @@ export default function Update() {
                       )}
                     </div>
                   </div> */}
-                  </div>
-                  <div style={{ textAlign: "center" }}>
-                    <button
-                      type="submit"
-                      // onClick={(e) => onSubmit(e)}
-                      className="btn btn-outline-primary "
-                    >
-                      Update
-                      {/* onSubmit={(e) => onSubmit(e)}>  */}
-                    </button>
-                    {/* <button
+                </div>
+                <div style={{ textAlign: "center" }}>
+                  <button
+                    type="submit"
+                    // onClick={(e) => onSubmit(e)}
+                    className="btn btn-outline-primary "
+                  >
+                    Update
+                    {/* onSubmit={(e) => onSubmit(e)}>  */}
+                  </button>
+                  {/* <button
                     type="clear"
                     className="btn btn-outline-danger mx-2 text-center"
                   >
                     Cancel
                   </button> */}
-                  </div>
                 </div>
               </div>
             </div>
-            {/* // ) : (<p>no records matches</p> )} */}
-          </form>
+          </div>
+          {/* // ) : (<p>no records matches</p> )} */}
+        </form>
         {/* ) : (
           // ""
           <p className="text-danger text-center">no records matches</p>

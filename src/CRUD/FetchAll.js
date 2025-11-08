@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { API_BASE_LINK } from "../API";
 // import data from './data/mock-data.'
 // import FetchById from "./FetchById";cmd
 // import { Pagination } from "react-bootstrap";cmd
@@ -23,7 +24,8 @@ export default function FetchAll() {
     try {
       const result = await axios.get(
         // "http://localhost:8080/fetchAllCustomer");
-        "https://springprojectinsurance-production-87a1.up.railway.app/fetchAllCustomer");
+        // "https://springprojectinsurance-production-87a1.up.railway.app/fetchAllCustomer");
+        `${API_BASE_LINK}fetchAllCustomer`);
       setCustomers(result.data.listCustomer);
       console.log(result.data);
     } catch (error) {

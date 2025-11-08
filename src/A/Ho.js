@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom"; 
+import { API_BASE_LINK } from "../API";
 export default function Ho(props) {
   const [fetch, setfetch] = useState({
     userName: "",
@@ -56,7 +57,8 @@ export default function Ho(props) {
     try {
       await axios
         // .post("http://localhost:8080/loginUser", { userName, password })
-        .post("https://springprojectinsurance-production-87a1.up.railway.app/loginUser", { userName, password })
+        // .post("https://springprojectinsurance-production-87a1.up.railway.app/loginUser", { userName, password })
+        .post(`${API_BASE_LINK}loginUser`, { userName, password })
         .then((res) => {
           console.log(res.data.message);
           // const user = res.data.message === "Email not exits";cmd

@@ -1,6 +1,7 @@
 // import React, { Component, useState ,useEffect} from 'react'
 import axios from "axios";
 import React, { useState } from "react";
+import { API_BASE_LINK } from "../API";
 export default function FetchById() {
   const [fetch, setFetch] = useState({
     customerId: '',
@@ -39,7 +40,8 @@ export default function FetchById() {
       const record = await axios.get
         (
           // `http://localhost:8080/fetchCustomerId?customerId=${fetch.customerId}`,
-           `https://springprojectinsurance-production-87a1.up.railway.app/fetchCustomerId?customerId=${fetch.customerId}`,
+          //  `https://springprojectinsurance-production-87a1.up.railway.app/fetchCustomerId?customerId=${fetch.customerId}`,
+           `${API_BASE_LINK}fetchCustomerId?customerId=${fetch.customerId}`,
           {
 
             // customerId: `${fetch.customerId}` 

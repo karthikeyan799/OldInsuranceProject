@@ -1,21 +1,22 @@
 import axios from "axios";
-import React, {  useState } from "react";
+import React, { useState } from "react";
+import { API_BASE_LINK } from "../API";
 // import { Col, Row } from "react-bootstrap";cmd
 // import { useNavigate } from "react-router-dom";cmd
 
-export default function Add2() { 
+export default function Add2() {
   const [customers, setCustomers] = useState({
-    customerId:"",
+    customerId: "",
     customerName: "",
     customerAge: "",
     eMail: "",
-    phoneNumber: "", 
-    city: "", 
+    phoneNumber: "",
+    city: "",
     salary: "",
     // creaditLimit: "",
     gender: "",
-    eMailError:'',
-    phoneNumberError:'',
+    eMailError: '',
+    phoneNumberError: '',
   });
   const [errors, setErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
@@ -48,55 +49,56 @@ export default function Add2() {
       // Form is not valid, display errors
       setErrors(validationErrors);
     }
-   
-    try{
-      const result=await 
-      axios
-        .post(
-          // "http://localhost:8080/addCustomer",
-            "https://springprojectinsurance-production-87a1.up.railway.app/addCustomer",
-          customers
-          // formValues
-        )
-          const datas=result.data.customer;
-            if(datas===null){
-              alert("Add Customer Is Failure")
-              setErrors(validateForm(customers))
-            // setErrors({ eMailError: "Email Already Exist",
-            // phoneNumberError:"Phone Number Already Exist" });
-           
-            
-          // }else if(datas.eMail!==null){
-          //   alert("Add Customer Is Failure null not")
-          //   setErrors(validateForm(customers))
-          //   setErrors({ eMailError: "Email Already Exist",
-          //   phoneNumberError:"Phone Number Already Exist" });
-            
-          } else if(!result.data.customer){
-            setErrors({eMailError:"Duplicate Email",phoneNumberError:"Duplicate Number"})
-            // setErrors({phoneNumberError:"Dup numb"})
-            console.log(' duplicate mail');
-          }
-          else{
-          setCustomers(result.data.customer);
-          alert("Added Successfull...");
-         
-          console.log(result.data);
-          // setRecord(true);
-          setIsSubmit(true)
-          setErrors("")
-          }
-          // setErrors(validateForm(customers));
-        // })
-        // .catch((error) => {
-        //   console.log("Error added data: " + error);
-        // });
-      }catch(err){
-       
-        console.log("Add is error"+err)
-      }finally{
-        console.log("Add method is clicked")
+
+    try {
+      const result = await
+        axios
+          .post(
+            // "http://localhost:8080/addCustomer",
+            // "https://springprojectinsurance-production-87a1.up.railway.app/addCustomer",
+            `${API_BASE_LINK}addCustomer`,
+            customers
+            // formValues
+          )
+      const datas = result.data.customer;
+      if (datas === null) {
+        alert("Add Customer Is Failure")
+        setErrors(validateForm(customers))
+        // setErrors({ eMailError: "Email Already Exist",
+        // phoneNumberError:"Phone Number Already Exist" });
+
+
+        // }else if(datas.eMail!==null){
+        //   alert("Add Customer Is Failure null not")
+        //   setErrors(validateForm(customers))
+        //   setErrors({ eMailError: "Email Already Exist",
+        //   phoneNumberError:"Phone Number Already Exist" });
+
+      } else if (!result.data.customer) {
+        setErrors({ eMailError: "Duplicate Email", phoneNumberError: "Duplicate Number" })
+        // setErrors({phoneNumberError:"Dup numb"})
+        console.log(' duplicate mail');
       }
+      else {
+        setCustomers(result.data.customer);
+        alert("Added Successfull...");
+
+        console.log(result.data);
+        // setRecord(true);
+        setIsSubmit(true)
+        setErrors("")
+      }
+      // setErrors(validateForm(customers));
+      // })
+      // .catch((error) => {
+      //   console.log("Error added data: " + error);
+      // });
+    } catch (err) {
+
+      console.log("Add is error" + err)
+    } finally {
+      console.log("Add method is clicked")
+    }
   };
 
   // useEffect(() => {
@@ -109,22 +111,22 @@ export default function Add2() {
   return (
     <div className="conatainer mt-0">
       <div className="row responsive">
-        <div className="col-md-6 offset-md-3 bg-warning border rounder p-2 mt-4 shadow" style={{opacity:"0.9"}}>
+        <div className="col-md-6 offset-md-3 bg-warning border rounder p-2 mt-4 shadow" style={{ opacity: "0.9" }}>
           <h2 className="text-center m-2"> Add Customer</h2>
           {/* <div class="shadow-lg p-3 mb-5 bg-body rounded">Larger shadow</div> */}
           {/* <form onSubmit={(e) => onSubmite(e)}> */}
           <form
-          onSubmit={handleSubmit}>
+            onSubmit={handleSubmit}>
             {Object.keys(errors).length === 0 && isSubmit ? (
-              
+
               <div style={{}}><p>successful</p>
-               <div style={{marginLeft:"35%",textAlign:"center",backgroundColor:"whitesmoke",marginBottom:"0%",width:"30%"}}>
+                <div style={{ marginLeft: "35%", textAlign: "center", backgroundColor: "whitesmoke", marginBottom: "0%", width: "30%" }}>
                   <label htmlFor="CustomerName " className="form-table">
                     Customer Id     :  {customers.customerId}
                   </label>
-                 
+
                 </div></div>
-            ): (""
+            ) : (""
               // <p>unsuccessful</p>
             )}
             <div className="card-body px-4 py-4">
@@ -155,9 +157,9 @@ export default function Add2() {
                   )}
                 </div>
                 <div className="col mb-3">
-                  
+
                   <label htmlFor="CustomerAge" className="form-table">
-                    CustomerAge 
+                    CustomerAge
                   </label>
                   {/* <div className="inputGroupContainer mb-3">
                     <div class="input-group">
@@ -210,7 +212,7 @@ export default function Add2() {
                   {/* </div> */}
                   {errors.eMail ? (
                     <span className="text-danger">{errors.eMail}</span>
-                  ):(<span className="text-danger">{errors.eMailError}</span>)}
+                  ) : (<span className="text-danger">{errors.eMailError}</span>)}
                 </div>
                 <div className="col mb-3">
                   <label htmlFor="PhoneNumber" className="form-table">
@@ -233,7 +235,7 @@ export default function Add2() {
                   {/* </div> */}
                   {errors.phoneNumber ? (
                     <span className="text-danger">{errors.phoneNumber}</span>
-                  ):(<span className="text-danger">{errors.phoneNumberError}</span>)}
+                  ) : (<span className="text-danger">{errors.phoneNumberError}</span>)}
                 </div>
               </div>
               <div className="row">
@@ -361,7 +363,7 @@ export default function Add2() {
               </div> */}
               </div>
               <div className="row">
-              <div className="col">
+                <div className="col">
                   <div className="mb-3">
                     <label htmlFor="Gender" className="form-table">
                       Gender
@@ -451,8 +453,8 @@ export default function Add2() {
 
               <div style={{ textAlign: "center" }}>
                 <button type="submit"
-                // onClick={handleSubmit}
-                 className="btn btn-outline-primary ">
+                  // onClick={handleSubmit}
+                  className="btn btn-outline-primary ">
                   Submit
                 </button>
                 {/* <button
@@ -468,7 +470,7 @@ export default function Add2() {
       </div>
     </div>
   );
-  
+
   function validateForm() {
     let errors = {};
     // if (!customers.customerId.trim()) {
@@ -487,45 +489,42 @@ export default function Add2() {
     // else{
     // 	document.getElementById('sname').textContent=' ';
     // }
-    if (customers.customerName==="") {
+    if (customers.customerName === "") {
       errors.customerName = "Name is required";
       // alert("required")
       console.log("name is requered")
       // if (c.getCustomerName().isBlank() &&
       //  !c.getCustomerName().matches(".*\\d.*")) {
-     
-    }else if(customers.customerName<2){
+
+    } else if (customers.customerName < 2) {
       // c.getCustomerName().length() < 3)
-      errors.customerName="Name is minimum 2 letters."
+      errors.customerName = "Name is minimum 2 letters."
       // alert("length")
-    }else if(customers.customerName.length>13){
-      errors.customerName="Name is maximum 14 letters."
-    // } else if (!customers.customerName.matchAll(".*\\d.*")) {
+    } else if (customers.customerName.length > 13) {
+      errors.customerName = "Name is maximum 14 letters."
+      // } else if (!customers.customerName.matchAll(".*\\d.*")) {
     } else if (!customers.customerName.matchAll("^[A-Za-z]+$")) {
-      errors.customerName="Name is Does'n match"
+      errors.customerName = "Name is Does'n match"
     }
-    if (customers.customerAge==="") {
+    if (customers.customerAge === "") {
       errors.customerAge = "Age is required";
-    }else if(customers.customerAge<18){
-      errors.customerAge="Age is Above 18"
-    }else if(customers.customerAge>50){
-      errors.customerAge="Age is Below 50"
+    } else if (customers.customerAge < 18) {
+      errors.customerAge = "Age is Above 18"
+    } else if (customers.customerAge > 50) {
+      errors.customerAge = "Age is Below 50"
     }
-    if (customers.gender==="") {
+    if (customers.gender === "") {
       errors.gender = "gender is required";
     }
-    if (customers.city==="") {
+    if (customers.city === "") {
       errors.city = "City is required";
     }
-    if (customers.salary==="") {
+    if (customers.salary === "") {
       errors.salary = "Salary is required";
-    }else if(customers.salary<15000){
-      // c.getCustomerName().length() < 3)
-      errors.salary="Salary is minimum 15,000 ."
-      // alert("length")
-    }
-    else if(customers.salary>50000){
-      errors.salary="Salary is maximum 50,000 ."
+    } else if (customers.salary <= 15000) {
+      errors.salary = "Salary is minimum 15,000 ."
+    } else if (customers.salary > 50000) {
+      errors.salary = "Salary is maximum 50,000 ."
     }
     // if (customers.state==="") {
     //   errors.state = "State is required";
@@ -539,16 +538,16 @@ export default function Add2() {
     // }else if(customers.customerName.length>13){
     //   errors.customerName="Name is maximum 14 letters."
     // }
-   
-// const isDuplicateEmail=existing.some((entry)=>entry.eMail===customers.eMail);cmd
 
-// const isDuplicatePhone=existing.some((entry)=>entry.phoneNumber===customers.phoneNumber);cmd
-// if(isDuplicateEmail||isDuplicatePhone){
-//   errors.phoneNumber="this number is already used";
-//   errors.eMail="this Email is already used";  
-// alert("duplicate violation")
-// }
-    if (customers.eMail==='') {
+    // const isDuplicateEmail=existing.some((entry)=>entry.eMail===customers.eMail);cmd
+
+    // const isDuplicatePhone=existing.some((entry)=>entry.phoneNumber===customers.phoneNumber);cmd
+    // if(isDuplicateEmail||isDuplicatePhone){
+    //   errors.phoneNumber="this number is already used";
+    //   errors.eMail="this Email is already used";  
+    // alert("duplicate violation")
+    // }
+    if (customers.eMail === '') {
       errors.eMail = "Email is required";
       // } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(customers.email)) {
       // ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$
@@ -558,11 +557,11 @@ export default function Add2() {
         // customers.email="Invalid Email"
         ()
     ) {
-      
+
       errors.eMail = "Invalid email address";
     }
 
-    if (customers.phoneNumber==='') {
+    if (customers.phoneNumber === '') {
       errors.phoneNumber = "Phone number is required";
     } else if (!/^[0-9]{10}$/i.test(customers.phoneNumber)) {
       errors.phoneNumber = "Invalid phone number";

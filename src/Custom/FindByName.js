@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
+import { API_BASE_LINK } from "../API";
 // import { Link } from "react-router-dom";
 
 export default function FindByName() {
@@ -62,8 +63,8 @@ export default function FindByName() {
       axios
         .get(
           // `http://localhost:8080/findByCustomerName?customerName=${customers.customerName}`
-          ` https://springprojectinsurance-production-87a1.up.railway.app/findByCustomerName?customerName=${customers.customerName}`
-         
+          // ` https://springprojectinsurance-production-87a1.up.railway.app/findByCustomerName?customerName=${customers.customerName}`
+          `${API_BASE_LINK}findByCustomerName?customerName=${customers.customerName}`
         )
         .then((result) => {
           const total = result.data.customized;
