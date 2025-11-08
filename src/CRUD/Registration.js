@@ -67,7 +67,9 @@ export default function Registration(props) {
         <div className="row ">
           <div className="offset-md-5 bg-light border 
           rounder p-4 mt-3 shadow"  style={{ width: "400px", }}>
-            <form onSubmit={save}>
+            <form 
+            onSubmit={save}
+            >
               <h2  style={{
                   textAlign: "center",
                   fontFamily: "cursive",
