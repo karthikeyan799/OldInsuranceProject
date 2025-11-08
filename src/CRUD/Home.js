@@ -36,7 +36,7 @@ export default function Home(props) {
     try {
       const resut = await axios.get(
         // "http://localhost:8080/CustomersCount");
-           "https://springprojectinsurance-production-87a1.up.railway.app/CustomersCount");
+           "https://disciplined-generosity-production-adb0.up.railway.app/CustomersCount");
       setFetch(resut.data.integer);
       console.log(resut.data);
     } catch (err) {
